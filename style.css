@@ -9,7 +9,7 @@ body{
     background-size: cover;
 }
 .card {
-    width: 25rem;
+    width: 28rem;
     min-width: 22rem;
     padding: 40px 30px;
     margin: 100px auto 0;
@@ -54,16 +54,23 @@ body{
 }
 
 .search button{
-    border: 0;
+    /* border: 0;
     outline: 0;
     background: #ebfffc;
-    border-radius: 50%;
+    border-radius: 49%;
     padding: 4px;   
     height: 60px;
     width: 60px;    
     cursor: pointer; 
-    transition: 3ms; 
+    transition: 3ms;  */
+    width:60px;
+    height:60px;
+    background-color: #e6f5fb;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 20px;
 }
+
 
 .search button:hover{
     background-color: aqua;
@@ -71,7 +78,14 @@ body{
 }
 
 .search button img{
-    width: 16px;
+    border: none;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
 }
 .weather {
     color: #ebfffc;
