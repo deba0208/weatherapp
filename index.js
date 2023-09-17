@@ -25,7 +25,7 @@ const changeInformation = (data) => {
   const temperature = document.querySelector("#temp");
   const humidity = document.querySelector(".humidity");
   const wind = document.querySelector(".windspeed");
-  city.innerHTML = data.name;
+  city.innerHTML = `${data.name}, ${data.sys.country}`;
   temperature.innerHTML = Math.round(data.main.temp) + "°C";
   humidity.innerHTML = data.main.humidity + "%";
   wind.innerHTML = data.wind.speed + "km/h";
@@ -65,20 +65,20 @@ const setIcon = (data) => {
   document.querySelector(".weather").style.display = "block";
 };
 const setBackground = (data) => {
-  const weatherIcon = document.querySelector("body");
+  const weatherIcon = document.querySelector("body").style;
   const weather = data.weather[0].main;
   if (weather == "Clouds") {
-    weatherIcon.style.backgroundImage = "url('./assets/images/Cloudy.jpg')";
+    weatherIcon.backgroundImage = "url('./assets/images/Cloudy.jpg')";
   } else if (weather == "Clear") {
-    weatherIcon.style.backgroundImage = "url('./assets/images/Clear.jpg')";
+    weatherIcon.backgroundImage = "url('./assets/images/Clear.jpg')";
   } else if (weather == "Rain") {
-    weatherIcon.style.backgroundImage = "url('./assets/images/Rainy.jpg')";
+    weatherIcon.backgroundImage = "url('./assets/images/Rainy.jpg')";
   } else if (weather == "Haze") {
-    weatherIcon.style.backgroundImage = "url('./assets/images/haze.jpg')";
+    weatherIcon.backgroundImage = "url('./assets/images/haze.jpg')";
   } else if (weather == "Snow") {
     weatherIcon.src = "./assets/images/snow.jpg";
   } else if (weather == "Mist") {
-    weatherIcon.src = "./assets/images/mist.png";
+    weatherIcon.backgroundImage = "url('./assets/images/mist.avif')";
   } else if (weather == "Smoke") {
     weatherIcon.src = "./assets/images/smoke.png";
   } else if (weather == "Dust") {
@@ -94,4 +94,5 @@ const setBackground = (data) => {
   } else if (weather == "Tornado") {
     weatherIcon.src = "./assets/images/tornado.png";
   }
+  weatherIcon.backgroundSize = "cover";
 };
